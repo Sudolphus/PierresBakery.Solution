@@ -14,9 +14,6 @@ namespace PierresBakery.Models
       PastryOffer();
       Order userOrder = new Order(0, 0);
       MainMenu(userOrder);
-      int totalPrice = userOrder.TotalPrice();
-      Console.WriteLine($"Your order for {userOrder.BreadOrder} loaves and {userOrder.PastryOrder} pastries comes to ${totalPrice}!");
-      Console.WriteLine("Thank you for shopping at Pierre's Bakery!");
     }
 
     private static void MainMenu(Order userOrder)
@@ -49,6 +46,9 @@ namespace PierresBakery.Models
         case "5":
           Checkout(userOrder);
           programExit = true;
+          break;
+        default:
+          Console.WriteLine("That is not a valid selection");
           break;
       }
       if (!programExit)
