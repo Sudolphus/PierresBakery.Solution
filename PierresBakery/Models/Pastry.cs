@@ -20,6 +20,10 @@ namespace PierresBakery.Models
 
     public static bool PastrySalesDetector(int pastry)
     {
+      if (pastry % 3 == 2)
+      {
+        return true;
+      }
       return false;
     }
   }
