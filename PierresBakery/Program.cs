@@ -1,6 +1,6 @@
 using PierresBakery.Models;
 
-namespace PierresBakery.UI
+namespace PierresBakery.Program
 {
   public class Program
   {

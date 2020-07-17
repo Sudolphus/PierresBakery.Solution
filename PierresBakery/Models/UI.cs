@@ -18,12 +18,15 @@ namespace PierresBakery.Models
 
     private static void MainMenu(Order userOrder)
     {
+      Console.WriteLine("--------------------------------------------");
       Console.WriteLine("Please choose one of the following options: ");
       Console.WriteLine("1: Add Bread To Order");
       Console.WriteLine("2: Add Pastries To Order");
       Console.WriteLine("3: View Special Offers");
       Console.WriteLine("4: View Shopping Cart");
-      Console.WriteLine("5: Checkout");
+      Console.WriteLine("5: Clear Shopping Cart");
+      Console.WriteLine("6: Checkout");
+      Console.WriteLine("--------------------------------------------");
       string userOption = Console.ReadLine();
       bool programExit = false;
       switch(userOption)
@@ -44,6 +47,11 @@ namespace PierresBakery.Models
           ShoppingCart(userOrder);
           break;
         case "5":
+          userOrder.BreadOrder = 0;
+          userOrder.PastryOrder = 0;
+          ShoppingCart(userOrder);
+          break;
+        case "6":
           Checkout(userOrder);
           programExit = true;
           break;
