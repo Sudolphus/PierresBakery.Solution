@@ -20,5 +20,10 @@ namespace PierresBakery.Models
       }
       return breadCost;
     }
+
+    public static bool BreadSalesDetector(int Bread)
+    {
+      return false;
+    }
   }
 }
