@@ -16,6 +16,8 @@ _This app will calculate the price of bread in Pierre's Bakery._
 |Program calculates the price of bread, taking the sale into account|3 loaves|Loaves price: $10|
 |Program calculates the price of pastries, take the offer into account|5 pastries|Pastries price: $9|
 |Program sums the price of bread and pastries, and returns the total to the user|3 loaves, 5 pastries|$19|
+|Program allows user to alter the amount of loaves they have ordered|Add 2 loaves| Loaves = {5}, Pastries = {5}|
+|Program allows user to alter the amount of pastries they have ordered|Add 3 pastries| Loaves = {5}, Pastries = {8}|
 
 
 ## Setup/Installation Requirements

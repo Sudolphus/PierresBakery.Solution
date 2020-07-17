@@ -61,5 +61,13 @@ namespace PierresBakery.Tests
       int calculatedTotalPrice = newOrder.TotalPrice();
       Assert.AreEqual(expectedTotalPrice, calculatedTotalPrice);
     }
+
+    [TestMethod]
+    public void AddBread_ShouldAddBreadToOrder_5()
+    {
+      Order newOrder = new Order(3, 5);
+      newOrder.AddBread(2);
+      Assert.AreEqual(5, newOrder.BreadOrder);
+    }
   }
 }
