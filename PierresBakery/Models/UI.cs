@@ -28,6 +28,7 @@ namespace PierresBakery.Models
       Console.WriteLine("4: View Shopping Cart");
       Console.WriteLine("5: Checkout");
       string userOption = Console.ReadLine();
+      bool programExit = false;
       switch(userOption)
       {
         case "1":
@@ -38,15 +39,36 @@ namespace PierresBakery.Models
           PastryOffer();
           AddPastryToOrder(userOrder);
           break;
+        case "3":
+          BreadOffer();
+          PastryOffer();
+          break;
+        case "4":
+          ShoppingCart(userOrder);
+          break;
+        case "5":
+          Checkout(userOrder);
+          programExit = true;
+          break;
       }
-      MainMenu(userOrder);
+      if (!programExit)
+      {
+        MainMenu(userOrder);
+      }
+    }
+
+    private static void Checkout(Order userOrder)
+    {
+      Console.WriteLine($"You ordered {userOrder.BreadOrder} loaves of bread and {userOrder.PastryOrder} pastries.");
+      Console.WriteLine($"Your total comes to ${userOrder.TotalPrice()}");
+      Console.WriteLine("Thank you for shopping at Pierre's Bakery!");
     }
 
     private static void ShoppingCart(Order userOrder)
     {
       Console.WriteLine("Your Cart:");
       Console.WriteLine($"{userOrder.BreadOrder} Loaves of Bread, {userOrder.PastryOrder} Pastries");
-      Console.WriteLine($"Total Price: {userOrder.TotalPrice()}");
+      Console.WriteLine($"Total Price: ${userOrder.TotalPrice()}");
     }
 
     private static void BreadOffer()
