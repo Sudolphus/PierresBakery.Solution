@@ -93,5 +93,35 @@ namespace PierresBakery.Tests
       newOrder.AddPastry(-1 * 2);
       Assert.AreEqual(3, newOrder.PastryOrder);
     }
+
+    [TestMethod]
+    public void NewOrder_NotAllowedToOrderNegativeBread_0()
+    {
+      Order newOrder = new Order(-30, 5);
+      Assert.AreEqual(0, newOrder.BreadOrder);
+    }
+
+    [TestMethod]
+    public void NewOrder_NotAllowedToOrderNegativePastries_0()
+    {
+      Order newOrder = new Order(4, -100);
+      Assert.AreEqual(0, newOrder.PastryOrder);
+    }
+
+    [TestMethod]
+    public void AddBread_NotAllowedToReduceBelowZero_0()
+    {
+      Order newOrder = new Order(3, 5);
+      newOrder.AddBread(-5);
+      Assert.AreEqual(0, newOrder.BreadOrder);
+    }
+
+    [TestMethod]
+    public void AddPastry_NotAllowedToReduceBelowZero_0()
+    {
+      Order newOrder = new Order(3, 5);
+      newOrder.AddPastry(-10);
+      Assert.AreEqual(0, newOrder.PastryOrder);
+    }
   }
 }
