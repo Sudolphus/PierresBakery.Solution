@@ -29,10 +29,10 @@ namespace PierresBakery.Tests
     [DataRow(20, 70)]
     [DataRow(90, 300)]
     [DataTestMethod]
-    public void PriceOfBread_ShouldCalculateBreadPrice_Match(int bread, int expectedBreadPrice)
+    public void TotalPrice_ShouldCalculateBreadPrice_Match(int bread, int expectedBreadPrice)
     {
-      Order newOrder = new Order(bread, 5);
-      int calculatedBreadPrice = newOrder.PriceOfBread();
+      Order newOrder = new Order(bread, 0);
+      int calculatedBreadPrice = newOrder.TotalPrice();
       Assert.AreEqual(expectedBreadPrice, calculatedBreadPrice);
     }
 
@@ -44,10 +44,10 @@ namespace PierresBakery.Tests
     [DataRow(20, 34)]
     [DataRow(90, 150)]
     [DataTestMethod]
-    public void PriceOfPastry_ShouldCalculatePastryPrice_Match(int pastry, int expectedPastryPrice)
+    public void TotalPrice_ShouldCalculatePastryPrice_Match(int pastry, int expectedPastryPrice)
     {
       Order newOrder = new Order(0, pastry);
-      int calculatedPastryPrice = newOrder.PriceOfPastry();
+      int calculatedPastryPrice = newOrder.TotalPrice();
       Assert.AreEqual(expectedPastryPrice, calculatedPastryPrice);
     }
 

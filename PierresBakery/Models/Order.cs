@@ -16,12 +16,12 @@ namespace PierresBakery.Models
       return PriceOfBread() + PriceOfPastry();
     }
 
-    public int PriceOfBread()
+    private int PriceOfBread()
     {
       return Bread.TotalCost(BreadOrder);
     }
 
-    public int PriceOfPastry()
+    private int PriceOfPastry()
     {
       return Pastry.TotalCost(PastryOrder);
     }
