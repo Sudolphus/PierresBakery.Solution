@@ -6,6 +6,11 @@ namespace PierresBakery.Models
   {
     public static void UI()
     {
+      ConsoleColor currentBackground = Console.BackgroundColor;
+      ConsoleColor currentForeground = Console.ForegroundColor;
+      Console.ForegroundColor = ConsoleColor.Yellow;
+      Console.BackgroundColor = ConsoleColor.Black;
+      Console.Beep();
       Console.WriteLine("Welcome to Pierre's Bakery!");
       Console.WriteLine("---------------------------");
       Console.WriteLine("Pierre's offers the finest in Bread & Pastries!");
@@ -13,11 +18,14 @@ namespace PierresBakery.Models
       BreadOffer();
       PastryOffer();
       Order userOrder = new Order(0, 0);
-      MainMenu(userOrder);
+      MainMenu(userOrder, currentBackground, currentForeground);
     }
 
-    private static void MainMenu(Order userOrder)
+    private static void MainMenu(Order userOrder, ConsoleColor background, ConsoleColor foreground)
     {
+      Console.Beep();
+      Console.ForegroundColor = ConsoleColor.Yellow;
+      Console.BackgroundColor = ConsoleColor.Black;
       Console.WriteLine("--------------------------------------------");
       Console.WriteLine("Please choose one of the following options: ");
       Console.WriteLine("1: Add Bread To Order");
@@ -29,6 +37,7 @@ namespace PierresBakery.Models
       Console.WriteLine("--------------------------------------------");
       string userOption = Console.ReadLine();
       bool programExit = false;
+      Console.Beep();
       switch(userOption)
       {
         case "1":
@@ -59,20 +68,27 @@ namespace PierresBakery.Models
           Console.WriteLine("That is not a valid selection");
           break;
       }
-      if (!programExit)
+      if (programExit)
       {
-        MainMenu(userOrder);
+        Console.ForegroundColor = foreground;
+        Console.BackgroundColor = background;
+      }
+      else
+      {
+        MainMenu(userOrder, background, foreground);
       }
     }
 
     private static void Checkout(Order userOrder)
     {
+      Console.ForegroundColor = ConsoleColor.Green;
       bool exitFlag = true;
       Console.WriteLine($"You ordered {userOrder.BreadOrder} loaves of bread and {userOrder.PastryOrder} pastries.");
       if (Bread.BreadSalesDetector(userOrder.BreadOrder))
       {
         Console.WriteLine("All bread is buy 2, get 1 free! Would you like to add a free loaf of bread to your cart? [Y/N]");
         string userResponse = Console.ReadLine();
+        Console.Beep();
         if (userResponse == "Y" || userResponse == "y")
         {
           userOrder.AddBread(1);
@@ -84,6 +100,7 @@ namespace PierresBakery.Models
       {
         Console.WriteLine("All pastries are 3 for $5! Would you like to add a pastry for only $1? [Y/N]");
         string userResponse = Console.ReadLine();
+        Console.Beep();
         if (userResponse == "Y" || userResponse == "y")
         {
           userOrder.AddPastry(1);
@@ -100,6 +117,7 @@ namespace PierresBakery.Models
 
     private static void ShoppingCart(Order userOrder)
     {
+      Console.ForegroundColor = ConsoleColor.DarkGreen;
       Console.WriteLine("Your Cart:");
       Console.WriteLine($"{userOrder.BreadOrder} Loaves of Bread, {userOrder.PastryOrder} Pastries");
       Console.WriteLine($"Total Price: ${userOrder.TotalPrice()}");
@@ -107,21 +125,25 @@ namespace PierresBakery.Models
 
     private static void BreadOffer()
     {
+      Console.ForegroundColor = ConsoleColor.Cyan;
       Console.WriteLine("Bread: $5 per loaf");
       Console.WriteLine("All bread is buy 2, get 1 free!");
     }
 
     private static void PastryOffer()
     {
+      Console.ForegroundColor = ConsoleColor.Cyan;
       Console.WriteLine("Pastries: $2 each");
       Console.WriteLine("All Pastries are 3 for $5!");
     }
 
     private static void AddBreadToOrder(Order userOrder)
     {
+      Console.ForegroundColor = ConsoleColor.DarkGreen;
       Console.WriteLine("How much bread would you like to add to your order?");
       try{
         int breadPlus = int.Parse(Console.ReadLine());
+        Console.Beep();
         userOrder.AddBread(breadPlus);
       }
       catch
@@ -133,10 +155,12 @@ namespace PierresBakery.Models
 
     private static void AddPastryToOrder(Order userOrder)
     {
+      Console.ForegroundColor = ConsoleColor.DarkGreen;
       Console.WriteLine("How many pastries would you like to add to your order?");
       try
       {
         int pastryPlus = int.Parse(Console.ReadLine());
+        Console.Beep();
         userOrder.AddPastry(pastryPlus);
       }
       catch
