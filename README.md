@@ -5,7 +5,7 @@
 
 ## Description
 
-_This app will calculate the price of bread in Pierre's Bakery._
+_This console app will calculate the price of bread in Pierre's Bakery, including taking into account the current sales Pierre has going on._
 
 ## Specifications
 
@@ -25,18 +25,19 @@ _This app will calculate the price of bread in Pierre's Bakery._
 Software Requirements
 1. .NET framework
 2. A code editor (Visual Studio Code, Atom, etc.)
+3. A terminal (Windows PowerShell, GitBash, etc.)
 
 Acquire The Repo:
-1. Click the 'Clone or Download Button
+1. Click the 'Clone or Download' Button
 2. Alternately, Clone via Bash/GitBash: `git clone {repo}`
 
 Editting the Code Base:
 1. Open the project in your code editor; with Bash, this is done by navigating to the project directory, then `code .`
-2. If you wish to run testing, you'll need the testing packages: navigate into the .Tests folder, and run `dotnet restore`
+2. If you wish to run testing, you'll need the testing packages: navigate into the PierresBakery.Tests folder, and run `dotnet restore`
 
 Running the program:
-1. To run the program, you'll need to compile the code: `dotnet build`. This will create a compiled application in the bin/ folder.
-2. Alternately, you can run the program directly with `dotnet run`.
+1. To run the program, you'll need to navigate into the PierresBakery folder
+2. In your console terminal, type `dotnet run`. If .NET is installed properly, the UI should print directly to your console.
 
 ## Known Bugs
 
@@ -48,27 +49,4 @@ _Please reach out through my GitHub account._
 
 ## Technologies Used
 
-* _VSCode_
-* _C# and .NET_
-
-### License
-
-Copyright (c) 2020 **_Micheal Hansen_**
-
-*Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:*
-
-*The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.*
-
-*THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.*
+_This project was coded in C# for the Microsoft .NET framework. All programming was done in VS Code, and tracked via Git._
