@@ -77,5 +77,21 @@ namespace PierresBakery.Tests
       newOrder.AddBread(-1 * 2);
       Assert.AreEqual(1, newOrder.BreadOrder);
     }
+
+    [TestMethod]
+    public void AddPastry_ShouldAddPastriesToOrder_10()
+    {
+      Order newOrder = new Order(3, 5);
+      newOrder.AddPastry(5);
+      Assert.AreEqual(10, newOrder.PastryOrder);
+    }
+
+    [TestMethod]
+    public void AddPastry_ShouldAlsoRemovePastriesFromOrder_3()
+    {
+      Order newOrder = newOrder(3, 5);
+      newOrder.AddPastry(-1 * 2);
+      Assert.AreEqual(3, newOrder.PastryOrder);
+    }
   }
 }
