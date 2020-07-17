@@ -17,5 +17,10 @@ namespace PierresBakery.Models
       }
       return pastryPrice;
     }
+
+    public static bool PastrySalesDetector(int pastry)
+    {
+      return false;
+    }
   }
 }

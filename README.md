@@ -18,7 +18,7 @@ _This app will calculate the price of bread in Pierre's Bakery._
 |Program allows user to alter the amount of loaves they have ordered|Add 2 loaves| Loaves = {5}, Pastries = {5}|
 |Program allows user to alter the amount of pastries they have ordered|Add 3 pastries| Loaves = {5}, Pastries = {8}|
 |Program reminds user of sales when they make an order|Add 2 Loaves|"Reminder: Bread is buy 2, get 1 free!"|
-
+|Program reminds user of sales when they make an order|Add 2 Pastry|"Reminder: Pastries are 3 for $5!"|
 
 ## Setup/Installation Requirements
 
