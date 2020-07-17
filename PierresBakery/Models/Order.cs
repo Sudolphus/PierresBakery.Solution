@@ -15,5 +15,10 @@ namespace PierresBakery.Models
     {
       return Bread.TotalCost(BreadOrder);
     }
+
+    public int PriceOfPastry()
+    {
+      return Pastry.TotalCost(PastryOrder);
+    }
   }
 }
