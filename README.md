@@ -23,25 +23,27 @@ _This console app will calculate the price of bread in Pierre's Bakery, includin
 ## Setup/Installation Requirements
 
 Software Requirements
-1. .NET framework
-2. A code editor (Visual Studio Code, Atom, etc.)
-3. A terminal (Windows PowerShell, GitBash, etc.)
+---
+1. .NET framework [download here](https://dotnet.microsoft.com/download). Note that this project is built on the 2.2 framework.
+2. A code editor ([Visual Studio Code](https://code.visualstudio.com), [Atom](https://atom.io/), etc.)
+3. A terminal (Windows PowerShell, [GitBash](https://git-scm.com/downloads), etc.)
 
 Acquire The Repo:
 1. Click the 'Clone or Download' Button
-2. Alternately, Clone via Bash/GitBash: `git clone {repo}`
+2. Alternately, Clone via Bash/GitBash: `git clone https://github.com/Sudolphus/PierresBakery.Solution.git`
 
 Editting the Code Base:
-1. Open the project in your code editor; with Bash, this is done by navigating to the project directory, then `code .`
+1. Open the project in your code editor
 2. If you wish to run testing, you'll need the testing packages: navigate into the PierresBakery.Tests folder, and run `dotnet restore`
 
 Running the program:
 1. To run the program, you'll need to navigate into the PierresBakery folder
 2. In your console terminal, type `dotnet run`. If .NET is installed properly, the UI should print directly to your console.
+3. If you want to run the tests, navigate to the PierresBakery.Tests folder, and run `dotnet test`. This should work, if you've installed the packages (see above for instructions)
 
 ## Known Bugs
 
-_None currently known_
+_Might mess with your console's default color scheme. It should reset back to default when exiting through the program's checkout, but it may not reset when exiting via `ctrl+c`_
 
 ## Support and contact details
 
