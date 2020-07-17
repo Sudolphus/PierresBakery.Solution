@@ -7,8 +7,22 @@ namespace PierresBakery.Models
 
     public Order(int bread, int pastry)
     {
-      BreadOrder = bread;
-      PastryOrder = pastry;
+      if (bread > 0)
+      {
+        BreadOrder = bread;
+      }
+      else
+      {
+        BreadOrder = 0;
+      }
+      if (pastry > 0)
+      {
+        PastryOrder = pastry;
+      }
+      else
+      {
+        PastryOrder = 0;
+      }
     }
 
     public int TotalPrice()
@@ -18,12 +32,26 @@ namespace PierresBakery.Models
 
     public void AddBread(int breadPlus)
     {
-      BreadOrder += breadPlus;
+      if (BreadOrder + breadPlus > 0)
+      {
+        BreadOrder += breadPlus;
+      }
+      else
+      {
+        BreadOrder = 0;
+      }
     }
 
     public void AddPastry(int pastryPlus)
     {
-      PastryOrder += pastryPlus;
+      if (PastryOrder + pastryPlus > 0)
+      {
+        PastryOrder += pastryPlus;
+      }
+      else
+      {
+        PastryOrder = 0;
+      }
     }
 
     private int PriceOfBread()
