@@ -50,5 +50,16 @@ namespace PierresBakery.Tests
       int calculatedPastryPrice = newOrder.PriceOfPastry();
       Assert.AreEqual(expectedPastryPrice, calculatedPastryPrice);
     }
+
+    [DataRow(0, 0, 0)]
+    [DataRow(3, 5, 19)]
+    [DataRow(10, 20, 69)]
+    [DataTestMethod]
+    public void TotalPrice_ShouldCalculateTotalPrice_Match(int bread, int pastry, int expectedTotalPrice)
+    {
+      Order newOrder = new Order(bread, pastry);
+      int calculatedTotalPrice = newOrder.TotalPrice();
+      Assert.AreEqual(expectedTotalPrice, calculatedTotalPrice);
+    }
   }
 }
