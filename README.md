@@ -1,17 +1,21 @@
-# _{Application Name}_
+# _Pierre's Bakery_
 
-#### _{Brief description of application}, {Date of current version}_
-
+#### _An App For Bread, 7.17.20_
+a
 #### By _**Micheal Hansen**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This app will calculate the price of bread in Pierre's Bakery._
 
 ## Specifications
 
 | Spec | Input | Output |
 | :--- | :---: | ---: |
+|Program allows user to specify how many loaves of bread and pastries they would like|3 loaves, 5 pastries|Loaves: {3}, Pastries {5}|
+|Program calculates the price of bread, taking the sale into account|3 loaves|Loaves price: $10|
+|Program calculates the price of pastries, take the offer into account|5 pastries|Pastries price: $9|
+|Program sums the price of bread and pastries, and returns the total to the user|3 loaves, 5 pastries|$19|
 
 
 ## Setup/Installation Requirements
@@ -34,7 +38,7 @@ Running the program:
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_None currently known_
 
 ## Support and contact details
 
