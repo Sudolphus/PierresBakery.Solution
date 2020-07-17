@@ -86,15 +86,30 @@ namespace PierresBakery.Models
     private static void AddBreadToOrder(Order userOrder)
     {
       Console.WriteLine("How much bread would you like to add to your order?");
-      int breadPlus = int.Parse(Console.ReadLine());
-      userOrder.AddBread(breadPlus);
+      try{
+        int breadPlus = int.Parse(Console.ReadLine());
+        userOrder.AddBread(breadPlus);
+      }
+      catch
+      {
+        Console.WriteLine("That input is not valid");
+        AddBreadToOrder(userOrder);
+      }
     }
 
     private static void AddPastryToOrder(Order userOrder)
     {
       Console.WriteLine("How many pastries would you like to add to your order?");
-      int pastryPlus = int.Parse(Console.ReadLine());
-      userOrder.AddPastry(pastryPlus);
+      try
+      {
+        int pastryPlus = int.Parse(Console.ReadLine());
+        userOrder.AddPastry(pastryPlus);
+      }
+      catch
+      {
+        Console.WriteLine("That input is not valid");
+        AddPastryToOrder(userOrder);
+      }
     }
   }
 }

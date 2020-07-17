@@ -1,7 +1,6 @@
 # _Pierre's Bakery_
 
 #### _An App For Bread, 7.17.20_
-a
 #### By _**Micheal Hansen**_
 
 ## Description
