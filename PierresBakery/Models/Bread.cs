@@ -10,14 +10,7 @@ namespace PierresBakery.Models
         breadCost += 10;
         bread -= 3;
       }
-      if (bread == 2)
-      {
-        breadCost += 10;
-      }
-      else if (bread == 1)
-      {
-        breadCost += 5;
-      }
+      breadCost += 5 * bread;
       return breadCost;
     }
 
