@@ -59,9 +59,35 @@ namespace PierresBakery.Models
 
     private static void Checkout(Order userOrder)
     {
+      bool exitFlag = true;
       Console.WriteLine($"You ordered {userOrder.BreadOrder} loaves of bread and {userOrder.PastryOrder} pastries.");
-      Console.WriteLine($"Your total comes to ${userOrder.TotalPrice()}");
-      Console.WriteLine("Thank you for shopping at Pierre's Bakery!");
+      if (Bread.BreadSalesDetector(userOrder.BreadOrder))
+      {
+        Console.WriteLine("All bread is buy 2, get 1 free! Would you like to add a free loaf of bread to your cart? [Y/N]");
+        string userResponse = Console.ReadLine();
+        if (userResponse == "Y" || userResponse == "y")
+        {
+          userOrder.AddBread(1);
+          exitFlag = false;
+          Checkout(userOrder);
+        }
+      }
+      if (Pastry.PastrySalesDetector(userOrder.PastryOrder))
+      {
+        Console.WriteLine("All pastries are 3 for $5! Would you like to add a pastry for only $1? [Y/N]");
+        string userResponse = Console.ReadLine();
+        if (userResponse == "Y" || userResponse == "y")
+        {
+          userOrder.AddPastry(1);
+          exitFlag = false;
+          Checkout(userOrder);
+        }
+      }
+      if (exitFlag)
+      {
+        Console.WriteLine($"Your total comes to ${userOrder.TotalPrice()}");
+        Console.WriteLine("Thank you for shopping at Pierre's Bakery!");
+      }
     }
 
     private static void ShoppingCart(Order userOrder)
