@@ -89,7 +89,7 @@ namespace PierresBakery.Tests
     [TestMethod]
     public void AddPastry_ShouldAlsoRemovePastriesFromOrder_3()
     {
-      Order newOrder = newOrder(3, 5);
+      Order newOrder = new Order(3, 5);
       newOrder.AddPastry(-1 * 2);
       Assert.AreEqual(3, newOrder.PastryOrder);
     }

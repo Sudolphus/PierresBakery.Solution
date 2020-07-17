@@ -21,6 +21,11 @@ namespace PierresBakery.Models
       BreadOrder += breadPlus;
     }
 
+    public void AddPastry(int pastryPlus)
+    {
+      PastryOrder += pastryPlus;
+    }
+
     private int PriceOfBread()
     {
       return Bread.TotalCost(BreadOrder);
