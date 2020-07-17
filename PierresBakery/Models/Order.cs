@@ -13,7 +13,7 @@ namespace PierresBakery.Models
 
     public int TotalPrice()
     {
-      return 0;
+      return PriceOfBread() + PriceOfPastry();
     }
 
     public int PriceOfBread()
