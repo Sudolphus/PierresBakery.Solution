@@ -2,13 +2,18 @@ namespace PierresBakery.Models
 {
   public class Order
   {
-    public int Bread { get; set; }
-    public int Pastry { get; set; }
+    public int BreadOrder { get; set; }
+    public int PastryOrder { get; set; }
 
     public Order(int bread, int pastry)
     {
-      Bread = bread;
-      Pastry = pastry;
+      BreadOrder = bread;
+      PastryOrder = pastry;
+    }
+
+    public int PriceOfBread()
+    {
+      return Bread.TotalCost(BreadOrder);
     }
   }
 }

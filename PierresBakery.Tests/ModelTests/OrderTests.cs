@@ -17,8 +17,8 @@ namespace PierresBakery.Tests
     public void NewOrder_ShouldStoreLoavesAndPastries_Match()
     {
       Order newUserOrder = new Order(3, 5);
-      Assert.AreEqual(3, newUserOrder.Bread);
-      Assert.AreEqual(5, newUserOrder.Pastry);
+      Assert.AreEqual(3, newUserOrder.BreadOrder);
+      Assert.AreEqual(5, newUserOrder.PastryOrder);
     }
 
     [DataRow(0, 0)]
