@@ -14,12 +14,6 @@ namespace PierresBakery.Models
       PastryOffer();
       Order userOrder = new Order(0, 0);
       MainMenu(userOrder);
-      Console.WriteLine("How many loaves of bread would you like?");
-      string stringBreadOrder = Console.ReadLine();
-      int breadOrder = int.Parse(stringBreadOrder);
-      Console.WriteLine("How many pastries would you like?");
-      string stringPastryOrder = Console.ReadLine();
-      int pastryOrder = int.Parse(stringPastryOrder);
       int totalPrice = userOrder.TotalPrice();
       Console.WriteLine($"Your order for {userOrder.BreadOrder} loaves and {userOrder.PastryOrder} pastries comes to ${totalPrice}!");
       Console.WriteLine("Thank you for shopping at Pierre's Bakery!");
@@ -33,6 +27,19 @@ namespace PierresBakery.Models
       Console.WriteLine("3: View Special Offers");
       Console.WriteLine("4: View Shopping Cart");
       Console.WriteLine("5: Checkout");
+      string userOption = Console.ReadLine();
+      switch(userOption)
+      {
+        case "1":
+          BreadOffer();
+          AddBreadToOrder(userOrder);
+          break;
+        case "2":
+          PastryOffer();
+          AddPastryToOrder(userOrder);
+          break;
+      }
+      MainMenu(userOrder);
     }
 
     private static void ShoppingCart(Order userOrder)
@@ -54,9 +61,18 @@ namespace PierresBakery.Models
       Console.WriteLine("All Pastries are 3 for $5!");
     }
 
-    private static void AddBreadToOrder()
+    private static void AddBreadToOrder(Order userOrder)
     {
+      Console.WriteLine("How much bread would you like to add to your order?");
+      int breadPlus = int.Parse(Console.ReadLine());
+      userOrder.AddBread(breadPlus);
+    }
 
+    private static void AddPastryToOrder(Order userOrder)
+    {
+      Console.WriteLine("How many pastries would you like to add to your order?");
+      int pastryPlus = int.Parse(Console.ReadLine());
+      userOrder.AddPastry(pastryPlus);
     }
   }
 }
