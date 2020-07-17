@@ -83,7 +83,7 @@ namespace PierresBakery.Models
     {
       Console.ForegroundColor = ConsoleColor.Green;
       bool exitFlag = true;
-      Console.WriteLine($"You ordered {userOrder.BreadOrder} loaves of bread and {userOrder.PastryOrder} pastries.");
+      Console.WriteLine(CheckoutTextBuilder(userOrder));
       if (Bread.BreadSalesDetector(userOrder.BreadOrder))
       {
         Console.WriteLine("All bread is buy 2, get 1 free! Would you like to add a free loaf of bread to your cart? [Y/N]");
@@ -115,11 +115,32 @@ namespace PierresBakery.Models
       }
     }
 
+    private static string CheckoutTextBuilder(Order userOrder)
+    {
+      string orderText;
+      if (userOrder.BreadOrder > 0 && userOrder.PastryOrder > 0)
+      {
+        orderText = $"You've ordered {userOrder.BreadOrder} loaves of bread and {userOrder.PastryOrder} pastries.";
+      }
+      else if (userOrder.BreadOrder > 0)
+      {
+        orderText = $"You've ordered {userOrder.BreadOrder} loaves of bread";
+      }
+      else if (userOrder.PastryOrder > 0)
+      {
+        orderText = $"You've ordered {userOrder.PastryOrder} pastries";
+      }
+      else{
+        orderText = "Your shopping cart is empty!";
+      }
+      return orderText;
+    }
+
     private static void ShoppingCart(Order userOrder)
     {
       Console.ForegroundColor = ConsoleColor.DarkGreen;
       Console.WriteLine("Your Cart:");
-      Console.WriteLine($"{userOrder.BreadOrder} Loaves of Bread, {userOrder.PastryOrder} Pastries");
+      Console.WriteLine(CheckoutTextBuilder(userOrder));
       Console.WriteLine($"Total Price: ${userOrder.TotalPrice()}");
     }
 
